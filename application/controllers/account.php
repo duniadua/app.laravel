@@ -13,7 +13,7 @@
 class Account_Controller extends Base_Controller {
     //put your code here
     public function action_index(){
-        
+        return View::make('account.index');
     }
     
     public function action_login(){
