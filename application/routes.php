@@ -112,3 +112,5 @@ Route::filter('auth', function()
 });
 
 Route::controller('account');
+
+//Route::controller(Controller::detect());
