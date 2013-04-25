@@ -12,11 +12,18 @@
  */
 class Clubhouse_Controller extends Base_Controller {
     //put your code here
-    public function action_index(){
+    public $restfull = true;
+    
+    public function get_index(){
         return View::make('account.index');
     }
     
-    public function action_add(){
+    public function post_index(){
+        
+        
+    }
+    
+    public function post_add(){
         
     }
     
