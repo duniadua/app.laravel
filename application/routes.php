@@ -113,4 +113,6 @@ Route::filter('auth', function()
 
 Route::controller('account');
 
+Route:get('clubhouse', function(){});
+
 //Route::controller(Controller::detect());
