@@ -14,9 +14,6 @@ class Clubhouse_Controller extends Base_Controller {
     //put your code here
     public $restfull = true;
     
-    public function get_index(){
-        return View::make('account.index');
-    }
     
     public function post_index(){
         
