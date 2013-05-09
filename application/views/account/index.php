@@ -6,13 +6,15 @@
         <?php
         echo render('asset.html_config_common');
         echo render('asset.header_cp');
+        
+        $mssg = Session::get('mssg');
         ?>
     </head>
     <body>
         <div class="container">
             <div class="span5">
                     <fieldset>
-                        <legend>News Update</legend>
+                        <legend>New Member Account</legend>
                         <label>User Name</label>
                         <?php
                         echo Form::open('account/add');
@@ -21,13 +23,14 @@
                         echo Form::password('password')."</br>";
                         
                         $active = array(
-                            'Y' => 'active',
-                            'N' => 'inactive',
+                            'true' => 'active',
+                            'false' => 'inactive',
                         );
                         
                         echo Form::select('active',$active)."</br>";
                         echo Form::submit('Save', array('class' => 'btn btn-primary'));
                         echo Form::close();
+                        echo $mssg;
                         ?>
                     </fieldset>
             </div>
