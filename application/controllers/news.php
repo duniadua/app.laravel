@@ -10,7 +10,7 @@
  *
  * @author sahid
  */
-class News extends Base_Controller {
+class News_Controller extends Base_Controller {
     //put your code here
     
     public function action_news(){
@@ -18,7 +18,21 @@ class News extends Base_Controller {
     }
     
     public function action_index(){
-        return View::make('news.index');
+        return View::make('news.index')->with('mssg','');
     }
     
+    public function action_add(){
+        $data = array(
+            'catagory' => Input::get('catagory'),
+            'title' => Input::get('title'),
+            'detail' => Input::get('detail'),
+            'user' => 'user',
+            'active' => Input::get('active'),
+            'ip_address' => Request::ip(),
+        );
+
+        $news = new News($data);
+        $news->save();
+        return View::make('news.index')->with('mssg','<div class=alert>'.Input::get('title').' Added </div>');
+    }
 }
