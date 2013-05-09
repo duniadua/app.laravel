@@ -29,16 +29,16 @@ class Account_Controller extends Base_Controller {
 
         $data = array(
             'username' => Input::get('username'),
-            'passsword' => Input::get('password'),
+            'password' => Input::get('password'),
             'email' => 'duniadua@gmail.com',
             'role' => 'user',
             'active' => Input::get('active'),
         );
 
-        $user = new User($data);
-        $user->save();
+        $users = new Users($data);
+        $users->save();
 
-        return Redirect::to('account');
+        return Redirect::to('account')->with('mssg','<div class=alert>'.Input::get('username').' Added </div>');
     }
 
 }
