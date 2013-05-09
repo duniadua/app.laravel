@@ -35,12 +35,10 @@ class Account_Controller extends Base_Controller {
             'active' => Input::get('active'),
         );
 
-        $news = new News($data);
-        $news->save();
+        $user = new User($data);
+        $user->save();
 
         return Redirect::to('account');
     }
 
 }
-
-?>
