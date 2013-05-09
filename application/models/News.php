@@ -14,7 +14,7 @@ class News extends Eloquent {
 
     //put your code here
     public static $table = 'news';
-    public static $key = 'id';
+//    public static $key = 'id';
 
 }
 
